@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Administração - QuizMaster</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+  <section id="admin-screen" class="tela ativa">
+    <div class="cartao centralizar">
+      <div class="logo">Quiz<span>Master</span> — Admin</div>
+      <h1>Painel de Administração</h1>
+      <p class="muted">Gerencie as perguntas do jogo</p>
+
+      <!-- Lista de Perguntas -->
+      <div id="lista-perguntas" class="lista-perguntas"></div>
+
+      <!-- AÇÕES -->
+      <div class="acoes">
+        <button id="btn-adicionar" class="btn primario">Adicionar</button>
+        <button id="btn-exportar" class="btn outline">Exportar JSON</button>
+
+        <!-- input invisível para importar -->
+        <input id="input-import" type="file" accept="application/json" style="display:none" />
+        <button id="btn-importar" class="btn secundario">Importar JSON</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Adicionar Pergunta</h2>
+      <form id="form-pergunta">
+        <label>Pergunta</label>
+        <input type="text" id="texto" required>
+
+        <label>Opções</label>
+        <input type="text" id="opcao1" placeholder="Opção 1" required>
+        <input type="text" id="opcao2" placeholder="Opção 2" required>
+        <input type="text" id="opcao3" placeholder="Opção 3" required>
+        <input type="text" id="opcao4" placeholder="Opção 4" required>
+
+        <label>Resposta Correta</label>
+        <select id="resposta" required>
+          <option value="0">Opção 1</option>
+          <option value="1">Opção 2</option>
+          <option value="2">Opção 3</option>
+          <option value="3">Opção 4</option>
+        </select>
+
+        <div class="modal-acoes">
+          <button type="submit" class="btn primario">Salvar</button>
+          <button type="button" id="btn-cancelar" class="btn secundario">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btn-importar').addEventListener('click', () => {
+      document.getElementById('input-import').click();
+    });
+  </script>
+
+
+  <script src="admin.js"></script>
+</body>
+
+</html>

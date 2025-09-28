@@ -1,0 +1,151 @@
+:root {
+    --bg1: #0f172a;
+    --accent1: #70f1ff;
+    --accent2: #7c3aed;
+    --cartao: #0b1220;
+    --suave: #a6b0bf;
+    --vidro: rgba(255, 255, 255, 0.03);
+    --sucesso: #16a34a;
+    --perigo: #ef4444;
+    --vidro-2: rgba(255, 255, 255, 0.02);
+}
+
+
+body{
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:
+      radial-gradient(600px 400px at 10% 10%, rgba(124, 58, 237, 0.12), transparent 10%),
+      radial-gradient(600px 400px at 90% 90%, rgba(112, 241, 255, 0.06), transparent 10%),
+      linear-gradient(180deg, #071126 0%, #071124 100%);
+    color: #e6eef8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.cartao {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+    margin: auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.logo span {
+  color: #38bdf8;
+}
+
+.lista-perguntas {
+  margin: 20px 0;
+  text-align: left;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.pergunta-item {
+  background: #334155;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px 14px;
+    font-weight: 700;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: #051025;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.12);
+}
+
+.btn:hover {
+    transform: translateY(-2px)
+}
+
+.btn.primario {color: #000; }
+
+.btn.secundario {color: #000; }
+
+.btn.outline { background: transparent; border: 1px solid #38bdf8; color: #38bdf8; }
+
+.btn-pequeno.editar{
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.btn-pequeno.remover{
+  background-color: #ff2323;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: left;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display:block;
+  margin-top: 10px;
+  font-size:14px;
+}
+
+.modal-content input,
+.modal-content select {
+  width:100%;
+  padding:8px;
+  border:none;
+  border-radius:6px;
+  margin-top:5px;
+  background:#0f172a;
+  color:#e6eef8;
+}
+
+.modal-acoes {
+  margin-top:15px;
+  display:flex;
+  justify-content:space-between;
+}

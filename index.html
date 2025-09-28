@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Trivia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Tela Inicial -->
+    <section id="tela-iniciar" class="tela ativo">
+        <div class="cartao centro">
+            <div class="logo">Quiz<span>Master</span></div>
+            <h1>Bem-vindo ao Quiz Master</h1>
+            <div class="acoes">
+                <button id="btn-comecar" class="btn primario inicio">Jogar</button>
+                <button id="modo-ranking" class="ranking">Ver Ranking</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Tela login-->
+    <section id="tela-login" class="tela">
+        <div class="cartao">
+            <div class="linha-cabecalho">
+                <h2>Quem vai jogar hoje?</h2>
+            </div>
+            <input id="input-nome-usuario" type="text" placeholder="Digite o seu nome" maxlength="24" />
+            <div class="acoes">
+                <button id="btn-salvar-nome" class="btn primario">Continuar</button>
+                <button id="voltar-boas-vindas" class="btn contorno">Voltar</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Tela de Menu-->
+    <section id="tela-menu" class="tela">
+        <div class="cartao">
+            <div class="cabecalho-menu">
+                <div>
+                    <div class="pequeno suave">Jogador</div>
+                    <div id="nome-jogador" class="nome-jogador">—</div>
+                </div>
+
+                <div class="mini-ranking" id="mini-ranking"><p></p></div>
+            </div>
+
+            <h2>Escolha o modo</h2>
+            <div class="grade-modos">
+                <button id="modo-normal" class="cartao-modo">Jogo Normal</button>
+                <button id="modo-rankingDois" class="cartao-modo contorno">Ver Ranking</button>
+            </div>
+
+            <div class="suave pequeno">Dica: respostas certas valem <strong>+10 pontos</strong>.</div>
+
+            <div class="acoes">
+                <button id="mudar-nome" class="btn contorno">Trocar Jogador</button>
+                <button id="voltar-boas-vindas-menu" class="btn secundario">Sair</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Tela do jogo-->
+    <section id="tela-jogo" class="tela">
+        <h1>Quiz<span>Master</span></h1>
+        <div class=" cartao tabela-quiz">
+            <div class="topo-quiz">
+                <div class="info-esquerda">
+                    <div class="suave pequeno">Modo</div>
+                    <div id="modo-jogo" class="grande">Jogo</div>
+                </div>
+
+                <div class="info-centro">
+                    <div class="barra-progresso">
+                        <div id="preenchimento-progresso"></div>
+                    </div>
+                </div>
+
+                <div class="info-direita" id="pontuacao">
+                    <div id="painel-pontuacao" class="painel-pontuacao">
+                        <div class="suave pequeno">Pontuação: </div>
+                        <div id="exibicao-pontuacao" class="numero-pontos">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="area-questao" aria-live="polite">
+                <div id="texto-questao" class="texto-questao">Pergunta...</div>
+                <div id="container-opcoes" class="container-opcoes"></div>
+            </div>
+
+            <div class="acoes-quiz">
+                <button id="btn-sair" class="btn contorno">Sair</button>
+                <button id="btn-proximo" class="btn primario escondido">Próxima</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Tela de Resultado-->
+    <section id="tela-resultado" class="tela">
+        <div class="cartao">
+            <h2>Resultado</h2>
+            <div class="resumo-resultado">
+                <div class="grande" id="pontuacao-resultado">0 pontos</div>
+            </div>
+    
+            <div class="acoes">
+                <button id="jogar-novamente" class="btn primario">Jogar Novamente</button>
+                <button id="voltar-menu" class="btn contorno">Voltar ao Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Tela de Ranking-->
+    <section id="tela-ranking" class="tela">
+        <div class="cartao">
+            <div class="cabecalho-ranking">
+                <h2>Ranking de Jogadores</h2>
+                <div class="suave pequeno">Total acumulado por jogador (sempre atualizado)</div>
+            </div>
+
+            <div id="lista-ranking" class="lista-ranking"></div>
+
+            <div class="acoes">
+                <button id="limpar-ranking" class="btn contorno">Limpar Ranking</button>
+                <button id="voltar-ranking" class="btn secundario">Voltar</button>
+            </div>
+        </div>
+    </section>
+
+        <!--Tela de Ranking2-->
+        <section id="tela-ranking2" class="tela">
+            <div class="cartao">
+                <div class="cabecalho-ranking">
+                    <h2>Ranking de Jogadores</h2>
+                    <div class="suave pequeno">Total acumulado por jogador (sempre atualizado)</div>
+                </div>
+    
+                <div id="lista-ranking2" class="lista-ranking"></div>
+    
+                <div class="acoes">
+                    <button id="limpar-ranking2" class="btn contorno">Limpar Ranking</button>
+                    <button id="voltar-ranking2" class="btn secundario">Voltar</button>
+                </div>
+            </div>
+        </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

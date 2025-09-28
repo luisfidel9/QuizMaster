@@ -1,0 +1,379 @@
+:root {
+    --bg1: #0f172a;
+    --accent1: #70f1ff;
+    --accent2: #7c3aed;
+    --cartao: #0b1220;
+    --suave: #a6b0bf;
+    --vidro: rgba(255, 255, 255, 0.03);
+    --sucesso: #16a34a;
+    --perigo: #ef4444;
+    --vidro-2: rgba(255, 255, 255, 0.02);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+  height: 100%
+}
+
+body{
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:
+      radial-gradient(600px 400px at 10% 10%, rgba(124, 58, 237, 0.12), transparent 10%),
+      radial-gradient(600px 400px at 90% 90%, rgba(112, 241, 255, 0.06), transparent 10%),
+      linear-gradient(180deg, #071126 0%, #071124 100%);
+    color: #e6eef8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.tela{
+    display: none;
+    width: 100%;
+    max-width: 980px;
+    text-align: center;
+}
+
+.tela.ativo{
+    display: block;
+} 
+
+.cartao {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+    margin: auto;
+}
+
+.centro {
+    max-width: 680px;
+    text-align: center;
+    padding: 48px
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: 0.6px
+}
+  
+.logo {
+    & span{
+        color: var(--accent1)
+    }
+}
+  
+h1 {
+    font-size: 28px;
+    margin: 12px 0
+}
+
+.inicio {
+    padding: 14px 22px
+}
+
+.ranking {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    box-shadow: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: 1px solid #38bdf8;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--accent1);
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px 14px;
+    font-weight: 700;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: #051025;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.12);
+}
+
+.btn:hover {
+    transform: translateY(-2px)
+}
+  
+.btn.contorno {
+    background: transparent;
+    color: var(--suave);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: none;
+}
+  
+.btn.secundario {
+    background: transparent;
+    color: var(--suave);
+    border: 1px dashed rgba(255, 255, 255, 0.03);
+}
+  
+.primario.inicio {
+    font-size: 16px;
+    padding: 14px 24px
+}
+
+/* Input */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    color: inherit;
+    margin: 12px 0;
+    font-weight: 600;
+}
+  
+/* MENU */
+.cabecalho-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px
+}
+  
+.nome-jogador {
+    font-size: 18px;
+    font-weight: 800
+}
+  
+.mini-ranking {
+    font-size: 13px;
+    color: var(--suave);
+    text-align: right
+}
+  
+/* Grade de Modos */
+.grade-modos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 18px 0
+}
+  
+@media (max-width:800px) {
+    .grade-modos {
+      grid-template-columns: repeat(1, 1fr)
+    }
+}
+  
+.cartao-modo {
+    padding: 18px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--accent1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tela Jogo */
+.tabela-quiz {
+    max-width: 900px
+}
+  
+.topo-quiz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px
+}
+  
+.info-esquerda,
+.info-centro,
+.info-direita {
+    display: flex;
+    flex-direction: column
+}
+
+.grande {
+    font-size: 20px;
+    font-weight: 800
+}
+  
+.barra-progresso {
+    width: 280px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 999px;
+    overflow: hidden
+}
+  
+#preenchimento-progresso {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    transition: width .35s ease
+}
+  
+.painel-pontuacao {
+    min-width: 96px;
+    text-align: right
+}
+
+.numero-pontos {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent1)
+}
+
+/* Área de Questoes */
+.area-questao {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+    padding: 18px;
+    border-radius: 12px
+}
+  
+.texto-questao {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #e6eef8
+}
+
+/* Área das Opções */
+.container-opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px
+}
+  
+@media (max-width:700px) {
+    .container-opcoes {
+      grid-template-columns: 1fr
+    }
+}
+  
+.btn-opcao {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    color: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s, box-shadow .12s;
+    text-align: left;
+}
+
+.btn-opcao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6)
+}
+  
+.btn-opcao.correto {
+    background: linear-gradient(90deg, rgba(22, 163, 74, 0.14), rgba(22, 163, 74, 0.06));
+    border-color: rgba(22, 163, 74, 0.35);
+    color: var(--sucesso)
+}
+  
+.btn-opcao.incorreto {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.11), rgba(239, 68, 68, 0.04));
+    border-color: rgba(239, 68, 68, 0.25);
+    color: var(--perigo)
+}
+  
+.btn-opcao[disabled] {
+    opacity: 0.92;
+    cursor: not-allowed;
+}
+
+/* Ações do quiz */
+.acoes-quiz {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px
+}
+  
+.acoes-quiz .btn {
+    flex: 1
+}
+  
+.acoes-quiz .btn:first-child {
+    margin-right: 10px
+}
+
+/* RESULTADO */
+.resumo-resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 18px 0
+}
+  
+/* RANKING */
+.lista-ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0
+}
+  
+.item-ranking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+  
+.item-ranking.topo {
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.12), rgba(112, 241, 255, 0.06));
+    border-color: rgba(85, 197, 241, 0.18)
+}
+
+.pos-ranking {
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--accent1);
+  width: 46px
+}
+
+.nome-ranking {
+  font-weight: 800
+}
+
+.pontuacao-ranking {
+  font-weight: 900;
+  color: var(--accent2)
+}
+
+.suave.pequeno {
+  font-size: 12px;
+}
+
+/* Animações */
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
